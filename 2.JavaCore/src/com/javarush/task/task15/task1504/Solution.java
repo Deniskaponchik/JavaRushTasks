@@ -1,8 +1,6 @@
 package com.javarush.task.task15.task1504;
-
 import java.util.LinkedList;
 import java.util.List;
-
 public class Solution {
     public static void main(String[] args) {
         List<Book> books = new LinkedList<Book>();
@@ -12,8 +10,8 @@ public class Solution {
     }
 
     abstract static class Book {
+        private String title;
         private String author;
-
         public Book(String author) {
             this.author = author;
         }
@@ -28,12 +26,39 @@ public class Solution {
 
             String output = "output";
             //Add your code here
-
-            return output;
+            if (this.getBook() instanceof MarkTwainBook)return markTwainOutput ;
+            else return agathaChristieOutput;
+            //return output;
         }
-
         public String toString() {
             return getOutputByBookType();
         }
+    }
+
+    public static class MarkTwainBook extends Book {
+        private String title;
+        public MarkTwainBook (String title) {
+            super("Mark Twain");
+            this.title = title;    }
+        @Override
+        public MarkTwainBook getBook() {
+            return this;
+        }
+        @Override
+        public String getTitle() {
+            return this.title;
+        }
+    }
+    public static class AgathaChristieBook extends Book {
+        private String title;
+        public AgathaChristieBook (String title) {
+            super("Agatha Christie");
+            this.title = title;    }
+
+        @Override
+        public AgathaChristieBook getBook() {      return this;      }
+
+        @Override
+        public String getTitle() {            return this.title;        }
     }
 }
