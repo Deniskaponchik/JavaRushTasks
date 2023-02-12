@@ -17,13 +17,13 @@ public class Solution implements Planet {
         // implement step #5 here - реализуйте задание №5 тут
         BufferedReader bufread = new BufferedReader(new InputStreamReader(System.in));
         String string1 = bufread.readLine();
-        if(string1.equals("sun")) { thePlanet = Sun.getInstance();        }
-        else if(string1.equals("moon")) { thePlanet = Moon.getInstance();        }
+        if(string1.equals("sun")) { Planet thePlanet = Sun.getInstance();        }
+        else if(string1.equals("moon")) {  Planet thePlanet = Moon.getInstance();        }
         else if(string1.equals("earth")){
-            thePlanet = Earth.getInstance();
+            Planet thePlanet = Earth.getInstance();
             //Planet thePalnet = new Earth();
         }
-        else { thePlanet = null;        }
+        else {            Planet thePlanet = null;        }
 
     }
 }
