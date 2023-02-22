@@ -7,6 +7,12 @@ public class Solution {
     }
 
     private static void investigateWorld() {
+        try {
+            Thread.currentThread().sleep(200);
+            //System.out.println(Thread.currentThread().getName() + ",  гуляет");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
@@ -32,7 +38,9 @@ public class Solution {
 
         private void initAllKittens() throws InterruptedException {
             kitten1.start();
+            kitten1.join();
             kitten2.start();
+            kitten2.join();
         }
     }
 
