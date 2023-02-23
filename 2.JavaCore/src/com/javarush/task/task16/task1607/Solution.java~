@@ -50,7 +50,6 @@ class Horse extends Thread {
 
     public void run() {
         String s = "";
-        //String s;
         for (int i = 0; i < 1001; i++) {   // Delay
             s += "" + i;
             if (i == 1000) {
