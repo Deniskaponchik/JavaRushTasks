@@ -6,8 +6,14 @@ public class Solution {
 
     public static void main(String[] args) throws InterruptedException {
         for (int i = 0; i < COUNT; i++) {
-            new SleepingThread();
+            new SleepingThread().join();
+            /*
+            COUNT--;
             //напишите тут ваш код
+            for (int j = 4; j > 0; j--) {
+                System.out.println(Thread.currentThread().getName());
+            }
+            Thread.currentThread().join();  */
         }
     }
 
@@ -25,6 +31,11 @@ public class Solution {
                 System.out.println(this);
                 if (--countdownIndex == 0) return;
                 //напишите тут ваш код
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e){
+                    System.out.println("Нить прервана");
+                }
             }
         }
 
