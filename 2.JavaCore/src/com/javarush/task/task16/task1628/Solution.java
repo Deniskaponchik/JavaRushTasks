@@ -44,16 +44,19 @@ public class Solution {
 
         public void run() {
             //напишите тут ваш код
-            try {
-                while (!isInterrupted()) {
-                    result.add(reader.readLine());
-                    //int currentReadStringCount = readStringCount.get();
-                    readStringCount.getAndIncrement();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
 
+            while (!Thread.currentThread().isInterrupted()) {
+                try {
+                    synchronized (reader) {
+                        if (reader.ready()) {
+                            result.add(reader.readLine());
+                            readStringCount.incrementAndGet();
+                        }
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
             @Override
