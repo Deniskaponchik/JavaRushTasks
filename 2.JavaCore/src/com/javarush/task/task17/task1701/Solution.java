@@ -3,9 +3,7 @@ package com.javarush.task.task17.task1701;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 
-Заметки
-*/
+/* Заметки*/
 
 public class Solution {
     public static void main(String[] args) {
@@ -29,6 +27,20 @@ public class Solution {
                 System.out.println("Нить [" + threadName + "] удалила чужую заметку [" + note + "]");
             } else {
                 System.out.println("Нить [" + threadName + "] удалила свою заметку [" + note + "]");
+            }
+        }
+    }
+    public static class NoteThread extends Thread {
+        public void run(){
+            for (int i = 0; i < 1000; i++) {
+                Note.addNote(getName() + "-Note" + i);
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                Note.removeNote(getName());
+
             }
         }
     }
