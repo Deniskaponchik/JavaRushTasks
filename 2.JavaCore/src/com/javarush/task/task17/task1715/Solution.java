@@ -23,7 +23,9 @@ public class Solution {
                 //synchronized (drugsController.allDrugs){
                     drugsController.sell(getRandomDrug(),getRandomCount());
                 //}
-                waitAMoment(); waitAMoment(); waitAMoment();
+                waitAMoment();
+                waitAMoment();
+                waitAMoment();
             }
         }
     }
