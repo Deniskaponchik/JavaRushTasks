@@ -1,7 +1,12 @@
 package com.javarush.task.task09.task0930;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+/* 
+Задача по алгоритмам Ӏ Java Syntax: 9 уровень, 11 лекция
+*/
 
 public class Solution {
     public static void main(String[] args) throws Exception {
@@ -45,10 +50,12 @@ public class Solution {
             if (i != 0 && character == '-') {
                 return false;
             }
+
             // не цифра и не начинается с '-'
             if (!Character.isDigit(character) && character != '-') {
                 return false;
             }
+
             // одиночный '-'
             if (chars.length == 1 && character == '-') {
                 return false;
