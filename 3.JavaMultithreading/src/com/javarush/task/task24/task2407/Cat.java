@@ -29,7 +29,7 @@ public class Cat implements Pet {
                          sb.append("я");
                      }
                      //System.out.println(Cat.this.name + " говорит м" + sb);
-                     return Cat.this.name + " говорит м" + sb + "у";
+                     return Cat.this.name + " говорит м" + sb + "у!";
                  }
              }
          };
