@@ -4,6 +4,9 @@ import com.javarush.task.task36.task3608.bean.User;
 
 import java.util.LinkedList;
 import java.util.List;
+/*
+2) Класс DataSource -- игрушечная база данных, имеет список юзеров, может их выдавать по запросу или даже записывать в себя новых
+ */
 
 public class DataSource {
     private static DataSource ourInstance = new DataSource();

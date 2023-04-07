@@ -5,6 +5,13 @@ import com.javarush.task.task36.task3608.dao.mock.DataSource;
 
 import java.util.ArrayList;
 import java.util.List;
+/*
+3) Класс UserDao -- класс-посредник, который работает с DataSource.
+Если какой-то сервис хочет с комфортом вытащить данные из DataSource,
+он не копается в DataSource напрямую (которая максимум, что может - лишь выплюнуть весь список юзеров без разбора),
+а пристаёт к прослойке UserDao, у которой есть все крутые методы работы с базой - и найдёт кого угодно,
+и выборку списка по условию сделает. Ведь DAO означает Data Access Object -- объект, который предоставляет доступ к данным.
+ */
 
 public class UserDao {
     private DataSource dataSource = DataSource.getInstance();

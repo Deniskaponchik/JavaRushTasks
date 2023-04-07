@@ -1,5 +1,5 @@
 package com.javarush.task.task36.task3608.bean;
-
+//1) Класс User -- ничего особенного - производит или клонирует юзеров с тремя полями
 public class User implements Cloneable {
     private String name;
     private final long id;
